@@ -1,0 +1,39 @@
+<form id="eventForm">
+    <input type="text" id="title" required>
+    <button type="submit">Submit</button>
+ </form>
+ 
+ <div id="result"></div>
+ 
+ <script>
+ const form = document.getElementById("eventForm");
+ const titleInput = document.getElementById("title");
+ const result = document.getElementById("result");
+ 
+ // validation + AJAX
+ form.addEventListener("submit", function(e){
+   e.preventDefault();
+ 
+   const title = titleInput.value.trim();
+ 
+   // Validation
+   if(title === ""){
+     alert("Title is required!");
+     return;
+   }
+ 
+   // AJAX submit (no refresh)
+   fetch("addevent.jsp", {
+     method: "POST",
+     body: new FormData(form)
+   })
+   .then(response => response.text())
+   .then(data => {
+     alert("Event added!");
+ 
+     // update page dynamically
+     result.innerHTML = data;
+     titleInput.value = "";
+   });
+ });
+ </script>

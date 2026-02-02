@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tracker - Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="box">
+    <h1>tracker</h1>
+    <p>Create your fitness account</p>
+
+    <form>
+
+      <label>Full Name</label>
+      <input type="text" name="fullname" required placeholder="Enter your full name">
+
+      <label>Username</label>
+      <input type="text" name="username" required minlength="3" maxlength="20"
+             placeholder="3–20 characters">
+
+      <label>Email Address</label>
+      <input type="email" name="email" required placeholder="example@email.com">
+
+      <label>Password</label>
+      <input type="password" name="password" required minlength="10"
+             placeholder="Min 10 characters">
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirmPassword" required minlength="10"
+             placeholder="Re-enter password">
+
+      <label>Age (optional)</label>
+      <input type="number" name="age" min="13" max="120" placeholder="13–120">
+
+      <label>tracker Goal</label>
+      <select name="goal" required>
+        <option value="">Select a goal</option>
+        <option>Weight loss</option>
+        <option>Muscle gain</option>
+        <option>Endurance</option>
+        <option>General fitness</option>
+      </select>
+
+      <label>Activity Level</label>
+      <select name="level" required>
+        <option value="">Select a level</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+
+      <div class="check">
+        <input type="checkbox" id="consent" required>
+        <label for="consent">
+          I agree to the Privacy Policy and Terms
+        </label>
+      </div>
+
+      <button type="submit">Register</button>
+
+
+    </form>
+  </div>
+
+</body>
+</html>
